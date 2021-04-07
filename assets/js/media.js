@@ -19,6 +19,7 @@
 //var urlMovies = 'https://api.themoviedb.org/3/movie/550?api_key=92a965805ccb832e42831c5c79bc1c67'
 //* This will give us 10000 results for genre = drama
 var urlMoviesDrama = 'https://api.themoviedb.org/3/discover/movie?with_genres=18&api_key=92a965805ccb832e42831c5c79bc1c67&language=en-US'
+var responseContainer = document.getElementById('response-container');
 var responseText = document.getElementById('response-text');
 
 //*create a list to put our data in 
@@ -32,22 +33,38 @@ function getApi(urlMoviesDrama) {
       // We check whether the response.status equals 200, as follows:
       if (response.status === 200) {
       	//If it does, we assign the status code from response.status to the textContent
-        responseText.textContent = response.status;
+        //responseText.textContent = response.status;
       }
       // we return response.json()
       return response.json();
     })
     .then(function (data) {
+      // this defines data as the results array within data 
+      data = data.results;
+      var randomNumber = getRandom(data.length);
+      //data = data.results[randomNumber];
       console.log(data);
       for (var i = 0; i < data.length; i++) {
-        var listItem = document.createElement('li');
-        listItem.textContent = data[i].html_url;
-        mediaList.appendChild(listItem);
+        //console.log('hello!')
+        console.log(data[i].title);
+        var movieName = document.createElement('h3');
+        var movieID = document.createElement('h5');
+        movieName.textContent = data[i].title;
+        movieID.textContent = data[i].id;
+        responseContainer.append(movieName);
+        responseContainer.append(movieID);
       }
-
-
+     
+     
+     console.log(randomNumber);
+    
   });
 }
+
+ //randomize it 
+ const getRandom = (data) => {
+    return Math.floor(Math.random() * data);
+ }
 
 getApi(urlMoviesDrama);
 
