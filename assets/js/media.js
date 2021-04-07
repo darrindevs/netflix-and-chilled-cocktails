@@ -21,6 +21,7 @@
 var urlMoviesDrama = 'https://api.themoviedb.org/3/discover/movie?with_genres=18&api_key=92a965805ccb832e42831c5c79bc1c67&language=en-US'
 var responseContainer = document.getElementById('response-container');
 var responseText = document.getElementById('response-text');
+var buttonContainerMedia = document.getElementById('button-container');
 
 //*create a list to put our data in 
 var mediaList = document.querySelector('ul');
@@ -43,17 +44,18 @@ function getApi(urlMoviesDrama) {
       data = data.results;
       var randomNumber = getRandom(data.length);
       //data = data.results[randomNumber];
-      console.log(data);
-      for (var i = 0; i < data.length; i++) {
+      console.log("data random number:" + data[randomNumber]);
+      data = data[randomNumber];
+      //for (var i = 0; i < data.length; i++) {
         //console.log('hello!')
-        console.log(data[i].title);
+        console.log(data.title);
         var movieName = document.createElement('h3');
         var movieID = document.createElement('h5');
-        movieName.textContent = data[i].title;
-        movieID.textContent = data[i].id;
+        movieName.textContent = data.title;
+        movieID.textContent = data.id;
         responseContainer.append(movieName);
         responseContainer.append(movieID);
-      }
+      //}
      
      
      console.log(randomNumber);
@@ -61,12 +63,19 @@ function getApi(urlMoviesDrama) {
   });
 }
 
- //randomize it 
+ //*randomize our results 
  const getRandom = (data) => {
     return Math.floor(Math.random() * data);
  }
 
-getApi(urlMoviesDrama);
+//getApi(urlMoviesDrama);
+
+//* Click Listener test
+document.getElementById("clickme").addEventListener("click", function() {
+    getApi(urlMoviesDrama);
+    //hides the whole button container when a selection is made
+    buttonContainerMedia.style.display = 'none';
+  });
 
 
     //* create var for API key
