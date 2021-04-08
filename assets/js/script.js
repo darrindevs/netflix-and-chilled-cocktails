@@ -63,22 +63,34 @@ const getRand = (input) => {
 }
 
 /**
- * Check input choice
+ * Check input choice, get drink, build html, inject
  */
 const checkIt = (e) => {
     e.stopPropagation();
     const regExp = /[^a-z]/;
-    let input = e.target.innerText;
-    input = input.toLowerCase().replace(regExp, '');console.log(input);
+    let input = e.target.innerText.toLowerCase();
+    input = input.replace(/[^A-Za-z]/g, '');
     getBeverage(input).then((drink) => {
-        const sectionEl = document.createElement('section');
+        const sectionEl = document.createElement('div');
         const figureEl = document.createElement('figure');
-        const figcaptionEl = document.createElement('figcapture');
+        const figcaptionEl = document.createElement('figcaption');
         const imgEl = document.createElement('img');
         const pEl = document.createElement('p');
         const olEl = document.createElement('ol');
-// add loop here
-        const olEl = document.createElement('li');
+        imgEl.src = drink.image;
+        figcaptionEl.textContent = drink.name;
+        pEl.textContent = drink.instructions;
+        for (let i = 0; i < drink.ingredients.length; i++) {
+            const liEl = document.createElement('li');
+            liEl.textContent = drink.ingredients[i];
+            olEl.append(liEl);
+        }
+        figureEl.append(imgEl);
+        figureEl.append(figcaptionEl);
+        sectionEl.append(figureEl);
+        sectionEl.append(pEl);
+        sectionEl.append(olEl);
+        drinkButtonsEl.prepend(sectionEl);
     });
 }
 
@@ -90,4 +102,4 @@ drinkButtonsEl.addEventListener('click', checkIt);
 /**
  * Usage: getBeverage
  */
-getBeverage('gin').then((drink) => console.log(drink));
+// getBeverage('gin').then((drink) => console.log(drink));
