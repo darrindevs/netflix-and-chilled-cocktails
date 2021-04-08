@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <!-- Basic Page Needs
@@ -15,7 +16,7 @@
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
+
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -25,45 +26,80 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
+
 
 </head>
-<body>
-  
+
+<body style="margin-left: 50px"></body>>
+
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
+  <header>
     <div class="row">
       <div class="column" style="margin-top: 20px">
         <h1>Netflix and Chilled Cocktails!</h1>
         <h4>Have a Drink and be Entertained</h4>
-        <p>Let's face it... Some of us can be pretty indecisive about what we feel like watching. Or drinking, for that matter. If that's you, we're here to help with some friendly suggestions...!</p>
+        <p>Let's face it... Some of us can be pretty indecisive about what we feel like watching. Or drinking, for that
+          matter. If that's you, we're here to help with some friendly suggestions...!</p>
       </div>
     </div><!-- row -->
+  </header>
+
+  
+    <div class="container"></div>
+    <form>
+      <label for="name">Hey there, movie drinker...! What do they call you?</label><br>
+      <input type="text" id="name" name="name"><br>
+      <button id="submit"
+        style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">Submit</button>
+    </form>
+
     <div id="buttons-row" class="row">
       <!-- buttons of movie genres-->
-  <div id="button-container" class="six columns">
-    <button id="button-2021" class="button pill-button" style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">🎉 2021</button>
-    <button id="button-drama" class="button pill-button" style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">&#127917 Dramas</button>
-    <button id="button-fincher"class="button pill-button" style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">♉️ Fincher</button>
-    <button id="button-1969"class="button pill-button" style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">🧙‍♂️ 1969 Comedies</button>
-    <button id="button-scifi" class="button pill-button" style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">&#128640 1984 SciFi</button>
-    <button id="button-kids" class="button pill-button" style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">👶 Kids</button>
-    <button id="button-brad-ed" class="button pill-button" style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">🧼️ Pitt + Norton</button>
-    <button id="button-pop" class="button pill-button" style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">🍿 Popular</button>
-  </div>
-<!-- buttons of cocktail ingredients -->
-  <div class="six columns">
-    <button class="button-primary">&#127796Rum</button>
-    <button class="button-primary">&#127805Whiskey</button>
-    <button class="button-primary">&#9973Gin</button>
-    <button class="button-primary">&#129364Vodka</button>
-    <button class="button-primary">&#127797Tequila</button>
-  </div>
+      <div id="button-container" class="six columns">
+        <button id="button-2021" class="button pill-button"
+          style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">🎉
+          2021</button>
+        <button id="button-drama" class="button pill-button"
+          style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">&#127917
+          Dramas</button>
+        <button id="button-fincher" class="button pill-button"
+          style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">♉️
+          Fincher</button>
+        <button id="button-1969" class="button pill-button"
+          style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">🧙‍♂️ 1969
+          Comedies</button>
+        <button id="button-scifi" class="button pill-button"
+          style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">&#128640
+          1984
+          SciFi</button>
+        <button id="button-kids" class="button pill-button"
+          style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">👶
+          Kids</button>
+        <button id="button-brad-ed" class="button pill-button"
+          style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">🧼️ Pitt +
+          Norton</button>
+        <button id="button-pop" class="button pill-button"
+          style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">🍿
+          Popular</button>
+      </div>
+      <!-- buttons of cocktail ingredients -->
+      <div class="six columns">
+        <button class="button-pill-button"
+          style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">&#127796Rum</button>
+        <button class="button-pill-button"
+          style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">&#127805Whiskey</button>
+        <button class="button-pill-button"
+          style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">&#9973Gin</button>
+        <button class="button-pill-button"
+          style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">&#129364Vodka</button>
+        <button class="button-pill-button"
+          style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">&#127797Tequila</button>
+      </div>
     </div><!-- row -->
     <div class="row">
       <div id="response-container" class="six columns">
-        
+
       </div><!-- -->
       <div class="six columns">
 
@@ -71,17 +107,20 @@
 
     </div><!-- row -->
     <div id="row-restart" class="row">
-  <!-- Restart button -->
-  <div  class="column" style="margin-top: 20px">
-    <button id="restart" class="button-primary">Try Again</button>
-  </div>
+      <!-- Restart button -->
+      <div class="column" style="margin-top: 20px">
+        <button id="restart" class="button pill-button"
+          style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">Try
+          Again</button>
+      </div>
 
     </div><!-- row -->
 
 
 
-  </div><!-- container -->
-  
-  <script src="assets/js/media.js"></script>
-</body>
+    </div><!-- container -->
+
+    <script src="assets/js/media.js"></script>
+  </body>
+
 </html>
