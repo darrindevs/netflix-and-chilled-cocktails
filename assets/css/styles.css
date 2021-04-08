@@ -1,0 +1,12 @@
+#drink-result figure {
+    margin: 0;
+}
+
+#drink-result figure img {
+    max-width: 100%;
+}
+
+#drink-result figcaption {
+    font-weight: bold;
+    font-size: 125%;
+}
