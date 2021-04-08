@@ -8,6 +8,8 @@ var urlMoviesDrama = 'https://api.themoviedb.org/3/discover/movie?with_genres=18
 var urlMoviesKids = 'https://api.themoviedb.org/3/discover/movie?certification.let=G&api_key=92a965805ccb832e42831c5c79bc1c67&language=en-US'
 var urlMovies2021 = 'https://api.themoviedb.org/3/discover/movie?primary_release_year=2021&api_key=92a965805ccb832e42831c5c79bc1c67&language=en-US'
 var urlMoviesComedy1969 = 'https://api.themoviedb.org/3/discover/movie?with_genres=35&primary_release_year=1969&api_key=92a965805ccb832e42831c5c79bc1c67&language=en-US'
+var urlMoviesBradEd = 'https://api.themoviedb.org/3/discover/movie?with_people=287,819&api_key=92a965805ccb832e42831c5c79bc1c67&language=en-US'
+
 
 //* Define our buttons and button container
 var buttonContainerMedia = document.getElementById('button-container');
@@ -15,6 +17,7 @@ var buttonDrama = document.getElementById('button-drama');
 var buttonKids = document.getElementById('button-kids');
 var button2021 = document.getElementById('button-2021');
 var button1969 = document.getElementById('button-1969');
+var buttonBradEd = document.getElementById('button-brad-ed');
 
 //* Define our responses and response containers
 var responseContainer = document.getElementById('response-container');
@@ -157,7 +160,7 @@ function getApi(urlMovies2021) {
       //buttonContainerMedia.style.display = 'none';
     });
 
-    //* Fetch Movies: Comedies 1969
+//* Fetch Movies: Comedies 1969
 function getApi(urlMoviesComedy1969) {
     fetch(urlMoviesComedy1969)
       .then(function (response) {
@@ -193,10 +196,54 @@ function getApi(urlMoviesComedy1969) {
     });
   }
   
-  //* Click Listener for Movies 2021
+  //* Click Listener for Movies: Comedies 1969
   //when the button is clicked the API call is made, results returned and the group of buttons are hidden
   button1969.addEventListener("click", function() {
       getApi(urlMoviesComedy1969);
+      //hides the whole button container when a selection is made
+      //buttonContainerMedia.style.display = 'none';
+    });
+  
+//* Fetch Movies: Brad Pitt + Edward Norton
+function getApi(urlMoviesBradEd) {
+    fetch(urlMoviesBradEd)
+      .then(function (response) {
+        console.log(response);
+        // We check whether the response.status equals 200, as follows:
+        if (response.status === 200) {
+            //If it does, we assign the status code from response.status to the textContent
+          //responseText.textContent = response.status;
+        }
+        // we return response.json()
+        return response.json();
+      })
+      .then(function (data) {
+        // this defines data as the results array within data 
+        data = data.results;
+        var randomNumber = getRandom(data.length);
+        //data = data.results[randomNumber];
+        console.log("data random number:" + data[randomNumber]);
+        data = data[randomNumber];
+        //for (var i = 0; i < data.length; i++) {
+          //console.log('hello!')
+          console.log(data.title);
+          var movieName = document.createElement('h1');
+          var movieID = document.createElement('h2');
+          movieName.textContent = data.title;
+          movieID.textContent = data.id;
+          responseContainer.append(movieName);
+          responseContainer.append(movieID);
+        //}
+       
+       console.log(randomNumber);
+      
+    });
+  }
+  
+  //* Click Listener for Movies: Brad Pitt + Edward Norton 
+  //when the button is clicked the API call is made, results returned and the group of buttons are hidden
+  buttonBradEd.addEventListener("click", function() {
+      getApi(urlMoviesBradEd);
       //hides the whole button container when a selection is made
       //buttonContainerMedia.style.display = 'none';
     });
