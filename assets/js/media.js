@@ -35,49 +35,7 @@ const getRandom = (data) => {
     return Math.floor(Math.random() * data);
  }
 
-//* Fetch Movies: Dramas 
-function getApi(urlMoviesDrama) {
-  fetch(urlMoviesDrama)
-    .then(function (response) {
-      console.log(response);
-      // We check whether the response.status equals 200, as follows:
-      if (response.status === 200) {
-      	//If it does, we assign the status code from response.status to the textContent
-        //responseText.textContent = response.status;
-      }
-      // we return response.json()
-      return response.json();
-    })
-    .then(function (data) {
-      // this defines data as the results array within data 
-      data = data.results;
-      var randomNumber = getRandom(data.length);
-      //data = data.results[randomNumber];
-      console.log("data random number:" + data[randomNumber]);
-      data = data[randomNumber];
-      //for (var i = 0; i < data.length; i++) {
-        //console.log('hello!')
-        console.log(data.title);
-        var movieName = document.createElement('h1');
-        var movieID = document.createElement('h2');
-        movieName.textContent = data.title;
-        movieID.textContent = data.id;
-        responseContainer.append(movieName);
-        responseContainer.append(movieID);
-      //}
-     
-     console.log(randomNumber);
-    
-  });
-}
 
-//* Click Listener for Movies Drama 
-//when the button is clicked the API call is made, results returned and the group of buttons are hidden
-buttonDrama.addEventListener("click", function() {
-    getApi(urlMoviesDrama);
-    //hides the whole button container when a selection is made, but keeps the div in place
-    buttonContainerMedia.style.visibility = 'hidden';
-  });
 
 //* Fetch Movies: Kids
 function getApi(urlMoviesKids) {
@@ -386,5 +344,80 @@ function getApi(urlMoviesPop) {
       //hides the whole button container when a selection is made, but keeps the div in place
       buttonContainerMedia.style.visibility = 'hidden';
     });
-  
+
+    
    
+//* Fetch Movies: Dramas 
+function getApi(urlMoviesDrama) {
+  fetch(urlMoviesDrama)
+    .then(function (response) {
+      console.log(response);
+      // We check whether the response.status equals 200, as follows:
+      if (response.status === 200) {
+      	//If it does, we assign the status code from response.status to the textContent
+        //responseText.textContent = response.status;
+      }
+      // we return response.json()
+      return response.json();
+    })
+    .then(function (data) {
+      // this defines data as the results array within data 
+      data = data.results;
+      var randomNumber = getRandom(data.length);
+      //data = data.results[randomNumber];
+      console.log("data random number:" + data[randomNumber]);
+      data = data[randomNumber];
+      //for (var i = 0; i < data.length; i++) {
+        //console.log('hello!')
+        console.log(data.title);
+        var movieName = document.createElement('h2');
+        var movieID = document.createElement('h2');
+        var genreID = document.createElement('h2');
+        var releaseDate = document.createElement('h2');
+        var overview = document.createElement('h2');
+        var voteAverage = document.createElement('h2');
+        var backdropPath = document.createElement('h2');
+        var posterPath = document.createElement('h2');
+        movieName.textContent = data.title;
+        movieID.textContent = data.id;
+        genreID.textContent = data.genre_ids;
+        releaseDate.textContent = data.release_date;
+        overview.textContent = data.overview;
+        voteAverage.textContent = data.vote_average;
+        backdropPath.textContent = data.backdrop_path;
+        posterPath.textContent = data.poster_path;
+        responseContainer.append(movieName);
+        responseContainer.append(movieID);
+        responseContainer.append(genreID);
+        responseContainer.append(releaseDate);
+        responseContainer.append(overview);
+        responseContainer.append(voteAverage);
+        responseContainer.append(backdropPath);
+        responseContainer.append(posterPath);
+        
+        //* new ones here
+        //listItem.textContent = data[i].title;
+        //listItem.textContent = data[i].genre_ids;
+        //listItem.textContent = data[i].release_date;
+        //listItem.textContent = data[i].overview;
+        //listItem.textContent = data[i].vote_average;
+        //listItem.textContent = data[i].backdrop_path;
+        //listItem.textContent = data[i].poster_path;
+        //* end new
+        //responseContainer.append(movieName);
+        //responseContainer.append(movieID);
+      //}
+     
+     console.log(randomNumber);
+    
+  });
+}
+
+//* Click Listener for Movies Drama 
+//when the button is clicked the API call is made, results returned and the group of buttons are hidden
+buttonDrama.addEventListener("click", function() {
+    getApi(urlMoviesDrama);
+    //hides the whole button container when a selection is made, but keeps the div in place
+    buttonContainerMedia.style.visibility = 'hidden';
+  });
+  
