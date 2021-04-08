@@ -1,7 +1,12 @@
-figure {
+#drink-result figure {
     margin: 0;
 }
 
-figure img {
+#drink-result figure img {
     max-width: 100%;
+}
+
+#drink-result figcaption {
+    font-weight: bold;
+    font-size: 125%;
 }

@@ -77,6 +77,7 @@ const checkIt = (e) => {
         const imgEl = document.createElement('img');
         const pEl = document.createElement('p');
         const olEl = document.createElement('ol');
+        sectionEl.id = 'drink-result';
         imgEl.src = drink.image;
         figcaptionEl.textContent = drink.name;
         pEl.textContent = drink.instructions;
