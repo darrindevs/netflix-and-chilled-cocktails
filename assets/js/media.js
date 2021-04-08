@@ -1,32 +1,27 @@
-//*put our code for OMDB here
-
-//*OMDB
-//* Erick's API key = 759292a3
-//* Darrin's OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=c82fba9d 
-
 //*TMDB
-//* Darrin's key 92a965805ccb832e42831c5c79bc1c67
+//* key 92a965805ccb832e42831c5c79bc1c67
 //* example endpoint https://api.themoviedb.org/3/movie/550?api_key=92a965805ccb832e42831c5c79bc1c67
 
-
-//* Create API endpoint URL
-//var urlMovies = 'http://www.omdbapi.com/?apikey=759292a3r=json&type=movie&genre=action&';
-//OMDB
-//var urlMovies = 'http://www.omdbapi.com/?apikey=c82fba9d&s=type&type=movie&genre=action&y=1981&page=100';
-
-//* Going forward with TMDB 
-//TMDB
-//var urlMovies = 'https://api.themoviedb.org/3/movie/550?api_key=92a965805ccb832e42831c5c79bc1c67'
-//* This will give us 10000 results for genre = drama
+//*TMDB API endpoints
+var urlMovies = 'https://api.themoviedb.org/3/movie/550?api_key=92a965805ccb832e42831c5c79bc1c67'
 var urlMoviesDrama = 'https://api.themoviedb.org/3/discover/movie?with_genres=18&api_key=92a965805ccb832e42831c5c79bc1c67&language=en-US'
+var urlMoviesKids = 'https://api.themoviedb.org/3/discover/movie?certification.let=G&api_key=92a965805ccb832e42831c5c79bc1c67&language=en-US'
+
+//* Define our buttons and button container
+var buttonContainerMedia = document.getElementById('button-container');
+var buttonDrama = document.getElementById('button-drama');
+var buttonKids = document.getElementById('button-kids');
+
+//* Define our responses and response containers
 var responseContainer = document.getElementById('response-container');
 var responseText = document.getElementById('response-text');
-var buttonContainerMedia = document.getElementById('button-container');
 
-//*create a list to put our data in 
-var mediaList = document.querySelector('ul');
+//*randomize our results by pulling the getRandom function into our individual fetch functions
+const getRandom = (data) => {
+    return Math.floor(Math.random() * data);
+ }
 
-
+//* Fetch Movies: Dramas 
 function getApi(urlMoviesDrama) {
   fetch(urlMoviesDrama)
     .then(function (response) {
@@ -49,34 +44,71 @@ function getApi(urlMoviesDrama) {
       //for (var i = 0; i < data.length; i++) {
         //console.log('hello!')
         console.log(data.title);
-        var movieName = document.createElement('h3');
-        var movieID = document.createElement('h5');
+        var movieName = document.createElement('h1');
+        var movieID = document.createElement('h2');
         movieName.textContent = data.title;
         movieID.textContent = data.id;
         responseContainer.append(movieName);
         responseContainer.append(movieID);
       //}
      
-     
      console.log(randomNumber);
     
   });
 }
 
- //*randomize our results 
- const getRandom = (data) => {
-    return Math.floor(Math.random() * data);
- }
-
-//getApi(urlMoviesDrama);
-
-//* Click Listener test
-document.getElementById("clickme").addEventListener("click", function() {
+//* Click Listener for Movies Drama 
+//when the button is clicked the API call is made, results returned and the group of buttons are hidden
+buttonDrama.addEventListener("click", function() {
     getApi(urlMoviesDrama);
     //hides the whole button container when a selection is made
-    buttonContainerMedia.style.display = 'none';
+    //buttonContainerMedia.style.display = 'none';
   });
 
+//* Fetch Movies: Kids
+function getApi(urlMoviesKids) {
+    fetch(urlMoviesKids)
+      .then(function (response) {
+        console.log(response);
+        // We check whether the response.status equals 200, as follows:
+        if (response.status === 200) {
+            //If it does, we assign the status code from response.status to the textContent
+          //responseText.textContent = response.status;
+        }
+        // we return response.json()
+        return response.json();
+      })
+      .then(function (data) {
+        // this defines data as the results array within data 
+        data = data.results;
+        var randomNumber = getRandom(data.length);
+        //data = data.results[randomNumber];
+        console.log("data random number:" + data[randomNumber]);
+        data = data[randomNumber];
+        //for (var i = 0; i < data.length; i++) {
+          //console.log('hello!')
+          console.log(data.title);
+          var movieName = document.createElement('h1');
+          var movieID = document.createElement('h2');
+          movieName.textContent = data.title;
+          movieID.textContent = data.id;
+          responseContainer.append(movieName);
+          responseContainer.append(movieID);
+        //}
+       
+       console.log(randomNumber);
+      
+    });
+  }
+  
+  //* Click Listener for Movies Drama 
+  //when the button is clicked the API call is made, results returned and the group of buttons are hidden
+  buttonKids.addEventListener("click", function() {
+      getApi(urlMoviesKids);
+      //hides the whole button container when a selection is made
+      //buttonContainerMedia.style.display = 'none';
+    });
+  
 
     //* create var for API key
     //* create vars for each endpoint 
