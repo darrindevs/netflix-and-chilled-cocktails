@@ -2,6 +2,7 @@
  * Global constants
  */
 const url_beverage = 'https://www.thecocktaildb.com/api/json/v1/1/';
+const drinkButtonsEl = document.querySelectorAll('.six.columns')[1];
 
 /**
  * Fetch external endpoint
@@ -14,13 +15,12 @@ const fetchData = (url) => {
             return response.json();
         }
         else {
-            console.error('Error:', response.statusText); // need a better way to handle rejects - please contact me if you know
+            console.error('Error:', response.statusText);
         }
     }).catch((error) => {
         console.error('Error: no response');
     });
 }
-
 
 /**
  * Get beveragess based on ingredient, then individual beverage
@@ -31,7 +31,7 @@ const getBeverage = (ingredient) => {
     let url = ingredient ? `${url_beverage}filter.php?i=${ingredient}` : `${url_beverage}random.php`;
     return fetchData(url).then((data) => {
         const drinks = data.drinks;
-        const drinkName = drinks[getRandom(drinks.length)].strDrink;
+        const drinkName = drinks[getRand(drinks.length)].strDrink;
         url = `${url_beverage}search.php?s=${drinkName}`;
         return fetchData(url).then((data) => {
             const rawDrink = data.drinks[0];
@@ -58,9 +58,34 @@ const getBeverage = (ingredient) => {
  * @param {Number} input - upper limit for random
  * @return {Number} random int
  */
-const getRandom = (input) => {
+const getRand = (input) => {
     return Math.floor(Math.random() * input);
 }
+
+/**
+ * Check input choice
+ */
+const checkIt = (e) => {
+    e.stopPropagation();
+    const regExp = /[^a-z]/;
+    let input = e.target.innerText;
+    input = input.toLowerCase().replace(regExp, '');console.log(input);
+    getBeverage(input).then((drink) => {
+        const sectionEl = document.createElement('section');
+        const figureEl = document.createElement('figure');
+        const figcaptionEl = document.createElement('figcapture');
+        const imgEl = document.createElement('img');
+        const pEl = document.createElement('p');
+        const olEl = document.createElement('ol');
+// add loop here
+        const olEl = document.createElement('li');
+    });
+}
+
+/**
+ *  Add listeners
+ */
+drinkButtonsEl.addEventListener('click', checkIt);
 
 /**
  * Usage: getBeverage
