@@ -75,8 +75,8 @@ function getApi(urlMoviesDrama) {
 //when the button is clicked the API call is made, results returned and the group of buttons are hidden
 buttonDrama.addEventListener("click", function() {
     getApi(urlMoviesDrama);
-    //hides the whole button container when a selection is made
-    //buttonContainerMedia.style.display = 'none';
+    //hides the whole button container when a selection is made, but keeps the div in place
+    buttonContainerMedia.style.visibility = 'hidden';
   });
 
 //* Fetch Movies: Kids
@@ -119,8 +119,8 @@ function getApi(urlMoviesKids) {
   //when the button is clicked the API call is made, results returned and the group of buttons are hidden
   buttonKids.addEventListener("click", function() {
       getApi(urlMoviesKids);
-      //hides the whole button container when a selection is made
-      //buttonContainerMedia.style.display = 'none';
+      //hides the whole button container when a selection is made, but keeps the div in place
+      buttonContainerMedia.style.visibility = 'hidden';
     });
 
     //* Fetch Movies: 2021
@@ -163,8 +163,8 @@ function getApi(urlMovies2021) {
   //when the button is clicked the API call is made, results returned and the group of buttons are hidden
   button2021.addEventListener("click", function() {
       getApi(urlMovies2021);
-      //hides the whole button container when a selection is made
-      //buttonContainerMedia.style.display = 'none';
+      //hides the whole button container when a selection is made, but keeps the div in place
+      buttonContainerMedia.style.visibility = 'hidden';
     });
 
 //* Fetch Movies: Comedies 1969
@@ -207,8 +207,8 @@ function getApi(urlMoviesComedy1969) {
   //when the button is clicked the API call is made, results returned and the group of buttons are hidden
   button1969.addEventListener("click", function() {
       getApi(urlMoviesComedy1969);
-      //hides the whole button container when a selection is made
-      //buttonContainerMedia.style.display = 'none';
+      //hides the whole button container when a selection is made, but keeps the div in place
+      buttonContainerMedia.style.visibility = 'hidden';
     });
   
 //* Fetch Movies: Brad Pitt + Edward Norton
@@ -295,8 +295,8 @@ function getApi(urlMoviesFincher) {
   //when the button is clicked the API call is made, results returned and the group of buttons are hidden
   buttonFincher.addEventListener("click", function() {
       getApi(urlMoviesFincher);
-      //hides the whole button container when a selection is made
-      //buttonContainerMedia.style.display = 'none';
+      //hides the whole button container when a selection is made, but keeps the div in place
+     buttonContainerMedia.style.visibility = 'hidden';
     });
 
     //* Fetch Movies: 1984 SciFi
@@ -339,8 +339,8 @@ function getApi(urlMoviesSciFi) {
   //when the button is clicked the API call is made, results returned and the group of buttons are hidden
   buttonSciFi.addEventListener("click", function() {
       getApi(urlMoviesSciFi);
-      //hides the whole button container when a selection is made
-      //buttonContainerMedia.style.display = 'none';
+      //hides the whole button container when a selection is made, but keeps the div in place
+      buttonContainerMedia.style.visibility = 'hidden';
     });
 
     //* Fetch Movies: 1977 Popular
@@ -383,36 +383,8 @@ function getApi(urlMoviesPop) {
   //when the button is clicked the API call is made, results returned and the group of buttons are hidden
   buttonPop.addEventListener("click", function() {
       getApi(urlMoviesPop);
-      //hides the whole button container when a selection is made
-      //buttonContainerMedia.style.display = 'none';
+      //hides the whole button container when a selection is made, but keeps the div in place
+      buttonContainerMedia.style.visibility = 'hidden';
     });
   
    
-
-
-    //* create var for API key
-    //* create vars for each endpoint 
-        //* random movie
-        //* movie genre 1
-        //* movie genre 2
-        //* movie genre 3
-        //* movie genre 4
-        //* movie genre 5
-        //* movie by actor 1
-        //* movie by actor 2
-        //* movie by actor 3
-        //* movie by actor 4
-        //* movie by actor 5
-
-
-//* Fetch external endpoint
-    //* Return response 
-    //* Console log response
-    //* Console log errors 
-
-
-
-
-//* Create function to GET random movie
-    //* var = random movie 
-    //
