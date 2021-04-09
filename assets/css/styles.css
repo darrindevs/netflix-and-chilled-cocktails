@@ -1,3 +1,32 @@
+body {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.six {
+    margin-bottom: 50px;
+}
+
+#media-result {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 5% 5% 0;
+}
+
+#media-result figure {
+    margin: 0;
+}
+
+#media-result figure img {
+    max-width: 50%;
+}
+
+#media-result figcaption {
+    font-weight: bold;
+    font-size: 150%;
+}
+
 #drink-result {
     border: 1px solid #eee;
     border-radius: 10px;
@@ -16,4 +45,13 @@
 #drink-result figcaption {
     font-weight: bold;
     font-size: 150%;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0%;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    width: 93%;
+    
 }
