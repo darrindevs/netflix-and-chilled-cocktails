@@ -67,11 +67,13 @@ const getRand = (input) => {
  */
 const checkIt = (e) => {
     e.stopPropagation();
-    const regExp = /[^a-z]/;
     let input = e.target.innerText.toLowerCase();
     input = input.replace(/[^A-Za-z]/g, '');
     getBeverage(input).then((drink) => {
-        const sectionEl = document.createElement('div');
+        if (document.getElementById('drink-result')) {
+            document.getElementById('drink-result').remove();
+        }
+        const sectionEl = document.createElement('section');
         const figureEl = document.createElement('figure');
         const figcaptionEl = document.createElement('figcaption');
         const imgEl = document.createElement('img');

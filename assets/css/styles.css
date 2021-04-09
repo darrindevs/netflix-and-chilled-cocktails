@@ -1,12 +1,19 @@
+#drink-result {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 5% 5% 0;
+}
+
 #drink-result figure {
     margin: 0;
 }
 
 #drink-result figure img {
-    max-width: 100%;
+    max-width: 50%;
 }
 
 #drink-result figcaption {
     font-weight: bold;
-    font-size: 125%;
+    font-size: 150%;
 }
