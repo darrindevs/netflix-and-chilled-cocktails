@@ -36,15 +36,15 @@
         🍿 + 🍸
         <hr>
     </div>
- 
+
 <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <header>
-    
+
     <div class="row">
       <div class="column" style="margin-top: 20px">
         <h1>Netflix and Chilled Cocktails!</h1>
-        <h4>Have a Drink and be Entertained</h4>
+        <h4>Have a Drink and be Entertained<span></span></h4>
         <p>Let's face it... Some of us can be pretty indecisive about what we feel like watching. Or drinking, for that
           matter. If that's you, we're here to help with some friendly suggestions...!</p>
       </div>
@@ -52,13 +52,13 @@
   </header>
 
 
-    <!--<div class="container"></div>
-    <form>
-      <label for="name">Hey there, movie drinker...! What do they call you?</label><br>
-      <input type="text" id="name" name="name"><br>
-      <button id="submit"
-        style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">Submit</button>
-    </form>-->
+    <div class="container">
+      <form>
+        <label>Hey there, movie drinker...! What do they call you?</label>
+          <input id="name" type="text" name="name" placeholder="your name" required="required" data-parsley-error-message="<b>Nice Try there, you! How about a name?</b>">
+          <button id="submit" style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">Submit</button>
+      </form>
+    </div>
 
     <div id="buttons-row" class="row">
       <!-- buttons of movie genres-->
@@ -112,14 +112,26 @@
       </div><!-- -->
 
     </div><!-- row -->
-   
+
 
 
     </div><!-- container -->
 
     <script src="assets/js/media.js"></script>
     <script src="./assets/js/script.js"></script>
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
+    <script>
+      var formInstance = $('form').parsley();
+      var field = $('input').parsley();
+      $('form').submit(function (event) {
+        event.preventDefault();
+        localStorage.setItem('name', $('#name').val());
+        $('h4 span').text(' ' + $('#name').val());
+      });
+      $(document).ready(function () {
+        $('h4 span').text(' ' + localStorage.getItem('name'));
+      });
+    </script>
 </body>
 </html>
