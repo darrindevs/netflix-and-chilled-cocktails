@@ -2,7 +2,8 @@
 
 Project One | Team Three
 
-![Netflix and Chilled Cocktails]("https://zno.s3-us-west-1.amazonaws.com/gif.gif")
+<img src="https://zno.s3-us-west-1.amazonaws.com/gif.gif" alt="Pic of application"
+title="Netflix and Chilled Cocktails" width="" />
 
 
 ## Description
