@@ -62,7 +62,18 @@ form {
 }
 
 
-/* Main */
+#cocktails {
+    margin-bottom: 100px;
+}
+
+/* Buttons */
+
+.pill-button {
+    background-color: #dfdbdb; 
+    border-color: lightgrey; 
+    border-radius: 80px; 
+    font-size: 18px;
+}
 
 .six {
     margin-bottom: 50px;
@@ -117,7 +128,7 @@ form {
 #footer {
     position: fixed;
     bottom: 0%;
-    margin-bottom: 0px;
+    padding-bottom: 20px;
     margin-top: 50px;
     width: 100%;
     background-color: white;
