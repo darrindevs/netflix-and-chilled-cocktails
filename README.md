@@ -10,23 +10,30 @@ title="Netflix and Chilled Cocktails" width="" />
 This project demonstrates the use of event listeners, local storage, multiple external api requests, and direct DOM manipulation. A team project, everyone came together to bring disparate pieces together to generate this app.
 
 ## Deployed App
-[Netflix and Chilled Cocktails] (https://darrindevs.github.io/netflix-and-chilled-cocktails)
+[Netflix and Chilled Cocktails](https://darrindevs.github.io/netflix-and-chilled-cocktails)
 
 
 ## Technologies used
 🏗 JavaScript - JavaScript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm.
+
 ＄ jQuery - jQuery is a JavaScript library designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax.
+
 🥬 Parsley - Parsley, the ultimate JavaScript form validation library · UX focused. Parsley strongly focuses on #UI and #UX .
+
 🦴 HTML - Hypertext Markup Language is the standard markup language for documents designed to be displayed in a web browser.
+
 👗 CSS - Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.
-👢 Bootstrap - Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS- and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.
+
+💀 Skeleton CSS - Skeleton is a dead simple, responsive boilerplate.
+
 ☑️ Git - Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during software development.
+
  ⛅️ GitHub - GitHub, Inc. is a provider of Internet hosting for software development and version control using Git.
 
 
 ## External APIs
-🎦 [The Moview Database API] (https://developers.themoviedb.org/3/getting-started/introduction)
-🍸 [The Cocktail Database API] (https://www.thecocktaildb.com/api.php) 
+🎦 [The Moview Database API](https://developers.themoviedb.org/3/getting-started/introduction)
+🍸 [The Cocktail Database API](https://www.thecocktaildb.com/api.php) 
 
 ## Code Snippet 
 
@@ -59,6 +66,6 @@ const getBeverage = (ingredient) => {
 
 ## Contributors
 
-- [Darrin] (https://github.com/darrindevs)
-- [John] (https://github.com/erickmeline)
-- [Erick] (https://github.com/Jsbaxter560)
+- [Darrin](https://github.com/darrindevs)
+- [John](https://github.com/erickmeline)
+- [Erick](https://github.com/Jsbaxter560)
