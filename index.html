@@ -44,20 +44,24 @@
     <div class="row">
       <div class="column" style="margin-top: 20px">
         <h1>Netflix and Chilled Cocktails!</h1>
-        <h4>Have a Drink and be Entertained<span></span></h4>
-        <p>Let's face it... Some of us can be pretty indecisive about what we feel like watching. Or drinking, for that
-          matter. If that's you, we're here to help with some friendly suggestions...!</p>
+        <h4>Have a Drink and be Entertained</h4>
+        <p><h5>Let's face it... Some of us can be pretty indecisive about what we feel like watching. Or drinking, for that matter.</h5></p>
+        <p><h5>If that's you, we're here to help with some friendly suggestions! </h5></p>
+          <br></p>
       </div>
     </div><!-- row -->
   </header>
 
 
-    <div class="container">
+    <div id="form-row" class="row">
       <form>
         <label>Hey there, movie drinker...! What do they call you?</label>
           <input id="name" type="text" name="name" placeholder="your name" required="required" data-parsley-error-message="<b>Nice Try there, you! How about a name?</b>">
-          <button id="submit" style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">Submit</button>
+          <button id="submit" class="button-primary" style="">Submit</button>
       </form>
+    </div>
+    <div id="hello">
+      <p id="hello-p"></p>
     </div>
 
     <div id="buttons-row" class="row">
@@ -103,7 +107,7 @@
           style="background-color: #dfdbdb; border-color: lightgrey; border-radius: 80px; font-size: 18px;">&#127797Tequila</button>
       </div>
     </div><!-- row -->
-    <div class="row">
+    <div id="content" class="row">
       <div id="response-container" class="six columns">
 
       </div><!-- -->
@@ -114,8 +118,12 @@
     </div><!-- row -->
 
 
-
+    <div id="footer" class="row">
+      <hr>
+      <span class="footer-text">🎦 Movie suggestions courtsey of The Movie Database API </span><span class="footer-text">🥤 Drink suggestions courtsey of The Cocktail Database API </span><span class="footer-text"><a href="https://github.com/darrindevs/netflix-and-chilled-cocktails" target="blank">Learn more about the project</a></span>
+    </div><!-- -->
     </div><!-- container -->
+    
 
     <script src="assets/js/media.js"></script>
     <script src="./assets/js/script.js"></script>
@@ -128,9 +136,17 @@
         event.preventDefault();
         localStorage.setItem('name', $('#name').val());
         $('h4 span').text(' ' + $('#name').val());
+        console.log()
+        
       });
       $(document).ready(function () {
         $('h4 span').text(' ' + localStorage.getItem('name'));
+      });
+      //* event listener for click and then display message using local storage
+      $("#submit").click(function() {
+      $("#hello-p").text("Hello " + localStorage.getItem('name') + ". Feeling lucky? Pick a movie category and pick a drink ingredient!");
+      $("#form-row").hide();
+     
       });
     </script>
 </body>
