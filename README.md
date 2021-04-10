@@ -2,8 +2,8 @@
 
 Project One | Team Three
 
-<img src="https://zno.s3-us-west-1.amazonaws.com/gif.gif" alt="Pic of application"
-title="Netflix and Chilled Cocktails" width="" />
+![Netflix and Chilled Cocktails]("https://zno.s3-us-west-1.amazonaws.com/gif.gif")
+
 
 ## Description
 
@@ -67,5 +67,5 @@ const getBeverage = (ingredient) => {
 ## Contributors
 
 - [Darrin](https://github.com/darrindevs)
-- [John](https://github.com/erickmeline)
-- [Erick](https://github.com/Jsbaxter560)
+- [John](https://github.com/Jsbaxter560)
+- [Erick](https://github.com/erickmeline)
