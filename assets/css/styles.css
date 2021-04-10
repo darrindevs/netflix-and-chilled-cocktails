@@ -3,57 +3,11 @@ body {
     margin-right: 50px;
 }
 
-.six {
-    margin-bottom: 50px;
-}
+/* Form */
 
-#media-result {
-    border: 1px solid #eee;
-    border-radius: 10px;
-    margin-bottom: 5%;
-    padding: 5% 5% 0;
-}
-
-#media-result figure {
-    margin: 0;
-}
-
-#media-result figure img {
-    max-width: 50%;
-}
-
-#media-result figcaption {
-    font-weight: bold;
-    font-size: 150%;
-}
-
-#drink-result {
-    border: 1px solid #eee;
-    border-radius: 10px;
-    margin-bottom: 5%;
-    padding: 5% 5% 0;
-}
-
-#drink-result figure {
-    margin: 0;
-}
-
-#drink-result figure img {
-    max-width: 50%;
-}
-
-#drink-result figcaption {
-    font-weight: bold;
-    font-size: 150%;
-}
-
-#footer {
-    position: fixed;
-    bottom: 0%;
-    margin-bottom: 10px;
-    margin-top: 50px;
-    width: 93%;
-
+#form-row {
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 input.parsley-success,
@@ -98,4 +52,90 @@ form {
 .parsley-errors-list {
     position: absolute;
     bottom: -20px;
+}
+
+#hello-p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 60px;
+    
+}
+
+
+#cocktails {
+    margin-bottom: 100px;
+}
+
+/* Buttons */
+
+.pill-button {
+    background-color: #dfdbdb; 
+    border-color: lightgrey; 
+    border-radius: 80px; 
+    font-size: 18px;
+}
+
+.six {
+    margin-bottom: 50px;
+}
+
+#media-result {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 5% 5% 0;
+}
+
+#media-result figure {
+    margin: 0;
+}
+
+#media-result figure img {
+    max-width: 50%;
+}
+
+#media-result figcaption {
+    font-weight: bold;
+    font-size: 150%;
+}
+
+#drink-result {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 5% 5% 0;
+}
+
+#drink-result figure {
+    margin: 0;
+}
+
+#drink-result figure img {
+    max-width: 50%;
+}
+
+#drink-result figcaption {
+    font-weight: bold;
+    font-size: 150%;
+}
+
+
+#content {
+    z-index: 0;
+    margin-bottom: 100px;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0%;
+    padding-bottom: 20px;
+    margin-top: 50px;
+    width: 100%;
+    background-color: white;
+    z-index: 10;
+
+}
+
+.footer-text {
+    margin-right: 10px;
 }
